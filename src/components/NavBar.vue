@@ -27,7 +27,10 @@ function toggleBurgerButton() {
 
 <template>
   <nav>
-    <img src="/src/assets/Logo.png" />
+    <RouterLink to="/">
+      <img src="/src/assets/Logo.png" />
+    </RouterLink>
+
     <div class="burger" @click="toggleBurgerButton">
       <div class="line"></div>
       <div class="line"></div>
