@@ -207,10 +207,14 @@ header {
 body.menu-open {
   overflow: hidden; // Disable scrolling
   overflow-y: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 html.menu-open {
   overflow: hidden; // Disable scrolling
+  position: fixed;
+  width: 100%;
 }
 
 .burger.toggle .line:nth-child(1) {
