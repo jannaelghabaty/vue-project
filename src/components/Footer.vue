@@ -5,6 +5,16 @@ const isActiveLInk = (routePath: string) => {
   const route = useRoute();
   return route.path === routePath;
 };
+
+const currentYear = new Date().getFullYear();
+let startYear: number;
+const checkYear = () => {
+  if (currentYear !== 2024) {
+    startYear = 2024;
+    return true;
+  }
+  return false;
+};
 </script>
 
 <template>
@@ -66,7 +76,11 @@ const isActiveLInk = (routePath: string) => {
 
       <!-- Copyright Notice -->
       <div class="footer-copyright">
-        <p>&copy; 2024 Janna Elghabaty. All Rights Reserved.</p>
+        <p>
+          &copy;
+          <span v-if="checkYear()">{{ startYear }} - </span>
+          {{ currentYear }} Janna Elghabaty. All Rights Reserved.
+        </p>
       </div>
     </div>
   </footer>
