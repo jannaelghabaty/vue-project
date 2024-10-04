@@ -4,6 +4,7 @@ import GamesLibrary from "@/views/GamesLibrary.vue";
 import About from "@/views/About.vue";
 import NotFound from "@/views/NotFound.vue";
 import GameView from "@/views/GameView.vue";
+import PlayGameView from "@/views/PlayGameView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -11,6 +12,12 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/playGame/:id",
+      name: "playGame",
+      component: PlayGameView,
+      props: (route) => ({ embedUrl: route.query.embedUrl }), // Pass embedUrl as prop from query
     },
     {
       path: "/gamesLibrary",
